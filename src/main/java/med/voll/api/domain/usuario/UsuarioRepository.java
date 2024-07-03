@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
+@EnableJpaRepositories
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     UserDetails findByLogin(String login);
