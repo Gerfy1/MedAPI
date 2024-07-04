@@ -4,7 +4,7 @@ import med.voll.api.domain.ValidacaoException;
 import med.voll.api.domain.consulta.ConsultaRepository;
 import med.voll.api.domain.consulta.DadosAgendamentoConsulta;
 
-public class ValidadorPacienteSemOutraConsultaNoDia {
+public class ValidadorPacienteSemOutraConsultaNoDia implements ValidadorAgendamentoDeConsulta{
 
     private ConsultaRepository repository;
 
