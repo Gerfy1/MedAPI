@@ -33,19 +33,36 @@ class MedicoRepositoryTest{
     @Test
     @DisplayName("Deveria devolver null quando o unico medico cadastrado não está disponivel na data")
     void escolherMedicoAleatorioLivreNaDataCenario1() {
+        // given ou arrange
+        var proximaSegundaAs10 = LocalDate.now()
+                .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
+                .atTime(10,0);
+        var medico = cadastrarMedico("Medico", "Medico@voll.med", "123456", Especialidade.CARDIOLOGIA);
+        var paciente = cadastrarPaciente("Paciente", "paciente@voll.med", "00000000030");
+        cadastrarConsulta(medico, paciente, proximaSegundaAs10);
+        //when ou asset
+        var medicoLivre = medicoRepository.escolherMedicoAleatorioLivreNaData(Especialidade.CARDIOLOGIA, proximaSegundaAs10);
+        //then ou asset
+        assertThat(medicoLivre).isNull();
+    }
+
+    @Test
+    @DisplayName("Deveria devolver medico quando ele estiver disponivel na data")
+    void escolherMedicoAleatorioLivreNaDataCenario2() {
+        // given ou arrange
         var proximaSegundaAs10 = LocalDate.now()
                 .with(TemporalAdjusters.next(DayOfWeek.MONDAY))
                 .atTime(10,0);
 
         var medico = cadastrarMedico("Medico", "Medico@voll.med", "123456", Especialidade.CARDIOLOGIA);
-        var paciente = cadastrarPaciente("Paciente", "paciente@voll.med", "00000000030");
-        cadastrarConsulta(medico, paciente, proximaSegundaAs10);
-
+        //when ou asset
         var medicoLivre = medicoRepository.escolherMedicoAleatorioLivreNaData(Especialidade.CARDIOLOGIA, proximaSegundaAs10);
-        assertThat(medicoLivre).isNull();
+        //then ou asset
+        assertThat(medicoLivre).isEqualTo(medico);
     }
+
     private void cadastrarConsulta(Medico medico, Paciente paciente, LocalDateTime data) {
-        em.persist(new Consulta(null, medico, paciente, data));
+        em.persist(new Consulta(null, medico, paciente, data, null));
     }
 
     private Medico cadastrarMedico(String nome, String email, String crm, Especialidade especialidade) {
