@@ -26,6 +26,12 @@ Este projeto desenvolve uma API REST para gerenciar operações em um consultór
 
 Este projeto visa demonstrar a aplicação prática dessas tecnologias e práticas no contexto de desenvolvimento de APIs RESTful para aplicações corporativas.
 
+## Apresentação
+![Img1](https://raw.githubusercontent.com/Gerfy1/MedAPI/main/src/2.png)
+![Img2](https://raw.githubusercontent.com/Gerfy1/MedAPI/main/src/4.png)
+![Img3](https://raw.githubusercontent.com/Gerfy1/MedAPI/main/src/3.png)
+![Img4](https://raw.githubusercontent.com/Gerfy1/MedAPI/main/src/5.png)
+
 ## Exemplo de Código
 
 ```java
