@@ -1,6 +1,6 @@
 # API REST para Consultório Médico
 
-Este projeto desenvolve uma API REST para gerenciar operações em um consultório médico, abrangendo tanto o lado do cliente quanto do servidor, e integrando ambos. Durante o desenvolvimento foram aplicadas as seguintes tecnologias e práticas:
+Este projeto desenvolve uma API REST para gerenciar operações em um consultório médico, abrangendo tanto o lado do cliente quanto do servidor, e integrando ambos. Durante o desenvolvimento foram aplicadas as seguintes tecnologias e práticas.
 
 ## Tecnologias e Práticas Utilizadas
 
